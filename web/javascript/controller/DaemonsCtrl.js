@@ -1,3 +1,5 @@
-app.controller('DaemonsCtrl', ['$scope', 'Socket', function($scope, Socket) {
+app.controller('DaemonsCtrl', ['$rootScope', '$scope', 'Socket', '$timeout', function($rootScope, $scope, Socket) {
+
+    $rootScope.domContentLoaded = false;
 
 }]);

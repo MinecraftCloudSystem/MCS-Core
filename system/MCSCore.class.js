@@ -9,6 +9,12 @@ var webServer = new WebServer();
 var DefaultConfig = require('./DefaultConfig.class');
 var config = new DefaultConfig();
 
+var PageManager = require('./PageManager.class');
+var pageManager = new PageManager();
+
+var Cache = require('./Cache.class');
+var cache = new Cache();
+
 var running = false;
 
 module.exports = class MCSCore {
@@ -34,6 +40,18 @@ module.exports = class MCSCore {
      * */
     getWebServer() {
         return webServer;
+    }
+
+    /**
+     * Gets the Webserver
+     * @returns {WebServer}
+     * */
+    getPageManager() {
+        return pageManager;
+    }
+
+    getCache() {
+        return cache;
     }
 
     /**

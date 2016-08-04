@@ -11,6 +11,29 @@
   <link rel="stylesheet" href="adminLTE/css/skins/skin-blue.min.css">
 
   <base href="/">
+
+  <style>
+    .page-loader {
+      margin-top: 5%;
+      margin-left: calc(50% - 40px);
+      width: 80px;
+      font-size: 16pt;
+      text-align: center;
+    }
+
+    .page-loader > i {
+      font-size: 22pt;
+      margin-bottom: 10px;
+    }
+
+    .main-footer {
+      text-align: center;
+    }
+
+    .callout {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper" ng-controller="NavigationCtrl">
@@ -24,11 +47,21 @@
       <a class="sidebar-toggle" data-toggle="offcanvas" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li>
+            <a style="cursor: pointer; transition: background 0.25s ease-in;">ilouHD</a>
+          </li>
+          <li style="margin-right: 20px;">
+            <a style="cursor: pointer; transition: background 0.25s ease-in;"><i class="fa fa-sign-out"></i></a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
   <aside class="main-sidebar">
     <section class="sidebar">
-
       <ul class="sidebar-menu">
         <li class="header">NAVIGATION</li>
         <li ng-class="{ active: isActive('mcs.page.dashboard') }"><a href="/dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
@@ -43,9 +76,21 @@
 
   <div class="content-wrapper">
     <section class="content">
-      <div ng-view></div>
+      <div class="callout" ng-class="$root.callout" ng-show="$root.callout != ''" ng-click="$root.removeCallout();">
+        <h4>{{ $root.calloutTitle }}</h4>
+        <p>{{ $root.calloutMessage }}</p>
+      </div>
+      <div class="page-loader" ng-show="!$root.domContentLoaded">
+        <i class="fa fa-spinner fa-pulse"></i><br/>
+        Loading...
+      </div>
+      <div ng-view ng-show="$root.domContentLoaded"></div>
     </section>
   </div>
+  <footer class="main-footer">
+    <strong>MCS 2.0.1</strong> (No Updates available)
+    <br/><span style="color: #039000;"><i class="fa fa-check-circle-o"></i></span> &nbsp; System online (no errors last hour) &nbsp; <span style="color: #039000;"><i class="fa fa-check-circle-o"></i></span>
+  </footer>
 </div>
 
 <script src="javascript/jquery.js"></script>

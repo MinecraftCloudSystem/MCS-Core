@@ -10,8 +10,8 @@
       "password": "password"
     }
   },
-  "license": {
-    "key": "JzKiwBKFdsbXv2td6iSL",
-    "serverName": "forum.mcsproject.net"
+  "port": {
+    "webinterface": 8080,
+    "listen": 1337
   }
 }

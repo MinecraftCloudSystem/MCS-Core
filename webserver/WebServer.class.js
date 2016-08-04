@@ -39,7 +39,7 @@ module.exports = class WebServer {
         });
 
         this.webserver = http.Server(this.app);
-        this.webserver.listen(8080);
+        this.webserver.listen(MCS.getCore().getDefaultConfig().getValue("port")['webinterface']);
 
         MCS.getCore().getLog().info("Webserver launched successfully");
 
@@ -47,7 +47,6 @@ module.exports = class WebServer {
     }
 
     getWebserver() {
-        MCS.getCore().getLog().debug(this.webserver);
         return this.webserver;
     }
 };

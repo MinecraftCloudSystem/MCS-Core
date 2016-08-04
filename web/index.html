@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <title>Minecraft Cloud System</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="fontAwesome/font-awesome.min.css">
+  <link rel="stylesheet" href="adminLTE/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="adminLTE/css/skins/skin-blue.min.css">
+
+  <base href="/">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper" ng-controller="NavigationCtrl">
+  <header class="main-header">
+    <a class="logo">
+      <span class="logo-mini">MCS</span>
+      <span class="logo-lg"><b>MCS</b></span>
+    </a>
+
+    <nav class="navbar navbar-static-top" role="navigation">
+      <a class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+    </nav>
+  </header>
+  <aside class="main-sidebar">
+    <section class="sidebar">
+
+      <ul class="sidebar-menu">
+        <li class="header">NAVIGATION</li>
+        <li ng-class="{ active: isActive('mcs.page.dashboard') }"><a href="/dashboard"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li ng-class="{ active: isActive('mcs.page.daemons') }"><a href="/daemons"><i class="fa fa-server"></i> <span>Daemons</span></a></li>
+        <li ng-class="{ active: isActive('mcs.page.plugins') }"><a href="/plugins"><i class="fa fa-plug"></i> <span>Plugins</span></a></li>
+        <li ng-class="{ active: isActive('mcs.page.worlds') }"><a href="/worlds"><i class="fa fa-globe"></i> <span>Worlds</span></a></li>
+        <li ng-class="{ active: isActive('mcs.page.servertypes') }"><a href="/servertypes"><i class="fa fa-gamepad"></i> <span>Servertypes</span></a></li>
+        <li ng-class="{ active: isActive('mcs.page.settings') }"><a href="/settings"><i class="fa fa-gears"></i> <span>Settings</span></a></li>
+      </ul>
+    </section>
+  </aside>
+
+  <div class="content-wrapper">
+    <section class="content">
+      <div ng-view></div>
+    </section>
+  </div>
+</div>
+
+<script src="javascript/jquery.js"></script>
+<script src="javascript/angular/angular.js"></script>
+<script src="javascript/angular/angular-route.js"></script>
+<script src="javascript/angular/angular-cookies.js"></script>
+<script src="javascript/angular/angular-file-upload.js"></script>
+<script src="javascript/socket.io.js"></script>
+<script src="javascript/util.js"></script>
+
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="adminLTE/js/app.min.js"></script>
+
+<script src="javascript/app.js"></script>
+<script src="javascript/routes.js"></script>
+
+<script src="javascript/controller/NavigationCtrl.js"></script>
+<script src="javascript/controller/DashboardCtrl.js"></script>
+<script src="javascript/controller/DaemonsCtrl.js"></script>
+<script src="javascript/controller/PluginsCtrl.js"></script>
+<script src="javascript/controller/WorldsCtrl.js"></script>
+<script src="javascript/controller/ServertypesCtrl.js"></script>
+<script src="javascript/controller/SettingsCtrl.js"></script>
+</body>
+</html>

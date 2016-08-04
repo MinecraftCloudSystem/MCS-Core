@@ -1,0 +1,17 @@
+{
+  "debugMode": true,
+  "database": {
+    "hostname": "localhorst",
+    "port": 27017,
+    "databse": "spaceboard",
+    "auth":  {
+      "enabled": false,
+      "username": "username",
+      "password": "password"
+    }
+  },
+  "license": {
+    "key": "JzKiwBKFdsbXv2td6iSL",
+    "serverName": "forum.mcsproject.net"
+  }
+}

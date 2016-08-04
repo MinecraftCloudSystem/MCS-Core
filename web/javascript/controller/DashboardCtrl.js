@@ -12,11 +12,10 @@ app.controller('DashboardCtrl', ['$rootScope', '$scope', 'Socket', function($roo
         }
 
         if(data.state == "success") {
-            console.log(data);
+            $scope.title = data.content.title;
             $rootScope.setLoading(false);
             return;
         }
-
 
     });
 

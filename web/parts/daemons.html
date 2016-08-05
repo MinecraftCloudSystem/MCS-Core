@@ -1,3 +1,55 @@
 <div ng-controller="DaemonsCtrl">
     <h3>{{ title }}</h3>
+    <div class="box">
+        <div class="box-body table-responsive no-padding">
+            <table class="table table-hover">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Management</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Alex's Root</td>
+                    <td>Stand By | Shut Down | API-Key</td>
+                    <td>CPU (95%)
+                        <div class="progress progress-xs progress-striped active">
+                            <div class="progress-bar progress-bar-danger" style="width: 95%;"></div>
+                        </div>
+                        RAM (57%)
+                        <div class="progress progress-xs progress-striped active">
+                            <div class="progress-bar progress-bar-warning" style="width: 57%;"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>Luca's Root</td>
+                    <td>API-Key</td>
+                    <td>Offline</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>René's Root</td>
+                    <td>Stand By | Shut Down | API-Key</td>
+                    <td>CPU (17%)
+                        <div class="progress progress-xs progress-striped active">
+                            <div class="progress-bar progress-bar-success" style="width: 17%;"></div>
+                        </div>
+                        RAM (22%)
+                        <div class="progress progress-xs progress-striped active">
+                            <div class="progress-bar progress-bar-success" style="width: 22%;"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>ilou's Root</td>
+                    <td>Wake Up | Shut Down | API-Key</td>
+                    <td>Standby</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>

@@ -1,3 +1,52 @@
 <div ng-controller="DashboardCtrl">
     <h3>{{ title }}</h3>
+    <div class="col-md-6">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <i class="fa fa-area-chart"></i>
+
+                <h3 class="box-title">Online Players (Last Hour)</h3>
+            </div>
+            <div class="box-body">
+                <div id="line-chart" style="height: 300px;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <i class="fa fa-file-text-o"></i>
+
+                <h3 class="box-title">Log</h3>
+            </div>
+            <div class="box-body table-responsive no-padding">
+                <div class="log">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Time</th>
+                                <th>Message</th>
+                            </tr>
+                            <tr class="bg-success">
+                                <td>just now</td>
+                                <td>Daemon "development.mcsproject.net" awaked</td>
+                            </tr>
+                            <tr class="bg-warning">
+                                <td>3m ago</td>
+                                <td>Can't check for Updates! Is the Updateserver offline?</td>
+                            </tr>
+                            <tr class="bg-success">
+                                <td>12h ago</td>
+                                <td>No updates available. System is up to date.</td>
+                            </tr>
+                            <tr class="bg-danger">
+                                <td>13h ago</td>
+                                <td>BungeeCord-Instance "BC 1" crashed!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

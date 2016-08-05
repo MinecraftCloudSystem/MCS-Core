@@ -5,12 +5,12 @@
   <title>Minecraft Cloud System</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
+  <base href="/">
+
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="fontAwesome/font-awesome.min.css">
   <link rel="stylesheet" href="adminLTE/css/AdminLTE.min.css">
   <link rel="stylesheet" href="adminLTE/css/skins/skin-blue.min.css">
-
-  <base href="/">
 
   <style>
     .page-loader {
@@ -35,8 +35,9 @@
     }
 
     .log {
-      max-height: 320px;
-      height: 320px;
+      max-height: 300px;
+      height: 300px;
+      overflow-y: scroll;
     }
   </style>
 </head>
@@ -129,7 +130,9 @@
 <script src="plugins/flot/jquery.flot.resize.min.js"></script>
 
 <script>
-
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
 </script>
 </body>
 </html>

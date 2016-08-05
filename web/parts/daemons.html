@@ -1,55 +1,118 @@
 <div ng-controller="DaemonsCtrl">
-    <h3>{{ title }}</h3>
-    <div class="box">
+    <h3>{{ title }}</h3><br/>
+    <div class="row">
+        <div class="col-md-6">
+            <a class="btn btn-block btn-primary" href="/daemons/add">Add Daemon</a>
+        </div>
+        <div class="col-md-6">
+            <a class="btn btn-block btn-danger" href="/daemons/remove">Remove Daemon</a>
+        </div>
+    </div>
+    <br/>
+    <div class="box box-primary">
         <div class="box-body table-responsive no-padding">
-            <table class="table table-hover">
+            <table class="table">
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Management</th>
-                    <th>Status</th>
+                    <th style="width: 5%; min-width: 40px;">ID</th>
+                    <th style="width: 20%; min-width: 150px;">Name</th>
+                    <th style="width: 20%; min-width: 150px;">Management</th>
+                    <th style="width: 10%; min-width: 150px;">Server Running</th>
+                    <th style="width: 10%; min-width: 150px;">Player Online</th>
+                    <th style="min-width: 200px;">
+                        <div class="col-md-6">
+                            Status
+                        </div>
+                    </th>
                 </tr>
-                <tr>
+                <tr class="bg-success">
                     <td>13</td>
                     <td>Alex's Root</td>
-                    <td>Stand By | Shut Down | API-Key</td>
-                    <td>CPU (95%)
-                        <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar progress-bar-danger" style="width: 95%;"></div>
+                    <td class="btn-group btn-block">
+                        <a href="#" class="btn btn-success btn-flat"><i class="fa fa-pause"></i></a>
+                        <a href="#" class="btn btn-success btn-flat"><i class="fa fa-power-off"></i></a>
+                        <a href="#" class="btn btn-success btn-flat"><i class="fa fa-key fa-rotate-180"></i></a>
+                    </td>
+                    <td>107 Server</td>
+                    <td>1973 Player</td>
+                    <td>
+                        <div class="col-md-6">
+                            CPU (95%)
+                            <div class="progress progress-xs progress-striped active">
+                                <div class="progress-bar progress-bar-danger" style="width: 95%;"></div>
+                            </div>
                         </div>
-                        RAM (57%)
-                        <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar progress-bar-warning" style="width: 57%;"></div>
+                        <div class="col-md-6">
+                            RAM (57%)
+                            <div class="progress progress-xs progress-striped active">
+                                <div class="progress-bar progress-bar-warning" style="width: 57%;"></div>
+                            </div>
                         </div>
                     </td>
                 </tr>
-                <tr>
+                <tr class="bg-danger">
                     <td>17</td>
                     <td>Luca's Root</td>
-                    <td>API-Key</td>
-                    <td>Offline</td>
-                </tr>
-                <tr>
-                    <td>21</td>
-                    <td>René's Root</td>
-                    <td>Stand By | Shut Down | API-Key</td>
-                    <td>CPU (17%)
-                        <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar progress-bar-success" style="width: 17%;"></div>
-                        </div>
-                        RAM (22%)
-                        <div class="progress progress-xs progress-striped active">
-                            <div class="progress-bar progress-bar-success" style="width: 22%;"></div>
+                    <td class="btn-group btn-block">
+                        <a href="#" class="btn btn-danger btn-flat"><i class="fa fa-key fa-rotate-180"></i></a>
+                    </td>
+                    <td>0 Server</td>
+                    <td>0 Player</td>
+                    <td>
+                        <div class="col-md-6">
+                            Offline
                         </div>
                     </td>
                 </tr>
-                <tr>
+                <tr class="bg-success">
+                    <td>21</td>
+                    <td>René's Root</td>
+                    <td class="btn-group btn-block">
+                        <a href="#" class="btn btn-success btn-flat"><i class="fa fa-pause"></i></a>
+                        <a href="#" class="btn btn-success btn-flat"><i class="fa fa-power-off"></i></a>
+                        <a href="#" class="btn btn-success btn-flat"><i class="fa fa-key fa-rotate-180"></i></a>
+                    </td>
+                    <td>17 Server</td>
+                    <td>322 Player</td>
+                    <td>
+                        <div class="col-md-6">
+                            CPU (17%)
+                            <div class="progress progress-xs progress-striped active">
+                                <div class="progress-bar progress-bar-success" style="width: 17%;"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            RAM (22%)
+                            <div class="progress progress-xs progress-striped active">
+                                <div class="progress-bar progress-bar-success" style="width: 22%;"></div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="bg-warning">
                     <td>22</td>
                     <td>ilou's Root</td>
-                    <td>Wake Up | Shut Down | API-Key</td>
-                    <td>Standby</td>
+                    <td class="btn-group btn-block">
+                        <a href="#" class="btn btn-warning btn-flat"><i class="fa fa-play"></i></a>
+                        <a href="#" class="btn btn-warning btn-flat"><i class="fa fa-power-off"></i></a>
+                        <a href="#" class="btn btn-warning btn-flat"><i class="fa fa-key fa-rotate-180"></i></a>
+                    </td>
+                    <td>0 Server</td>
+                    <td>0 Player</td>
+                    <td>
+                        <div class="col-md-6">
+                            Standby
+                        </div>
+                    </td>
                 </tr>
             </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <a class="btn btn-block btn-primary" href="/daemons/add">Add Daemon</a>
+        </div>
+        <div class="col-md-6">
+            <a class="btn btn-block btn-danger" href="/daemons/remove">Remove Daemon</a>
         </div>
     </div>
 </div>

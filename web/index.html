@@ -14,16 +14,20 @@
 
   <style>
     .page-loader {
-      margin-top: 5%;
-      margin-left: calc(50% - 40px);
-      width: 80px;
+      position: absolute;
+      top: 0;
+      left: calc(50% - 40px);
+      width: 50px;
+      height: 50px;
       font-size: 16pt;
       text-align: center;
+      line-height: 50px;
+      z-index: 5000;
+      color: #FFFFFF;
     }
 
     .page-loader > i {
-      font-size: 22pt;
-      margin-bottom: 10px;
+      font-size: 30px;
     }
 
     .main-footer {
@@ -43,6 +47,10 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper" ng-controller="NavigationCtrl">
+
+  <div class="page-loader" ng-show="!$root.domContentLoaded">
+    <i class="fa fa-spinner fa-pulse"></i>
+  </div>
   <header class="main-header">
     <a class="logo">
       <span class="logo-mini">MCS</span>
@@ -85,10 +93,6 @@
       <div class="callout" ng-class="$root.callout" ng-show="$root.callout != ''" ng-click="$root.removeCallout();">
         <h4>{{ $root.calloutTitle }}</h4>
         <p>{{ $root.calloutMessage }}</p>
-      </div>
-      <div class="page-loader" ng-show="!$root.domContentLoaded">
-        <i class="fa fa-spinner fa-pulse"></i><br/>
-        Loading...
       </div>
       <div ng-view ng-show="$root.domContentLoaded"></div>
     </section>

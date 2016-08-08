@@ -1,19 +1,19 @@
 'use strict';
 var MCS = require('../MCS');
 
-var dashboardCache = require('../cache/dashboard');
-var daemonsCache = require('../cache/daemons');
-var pluginsCache = require('../cache/plugins');
-var worldsCache = require('../cache/worlds');
-var servertypesCache = require('../cache/servertypes');
-var settingsCache = require('../cache/settings');
+var dashboardCache = require('../pages/dashboard');
+var daemonsCache = require('../pages/daemons');
+var pluginsCache = require('../pages/plugins');
+var worldsCache = require('../pages/worlds');
+var servertypesCache = require('../pages/servertypes');
+var settingsCache = require('../pages/settings');
 
 module.exports = class Cache {
     /**
      * Gets the Dashboard-Page as JSON-String
      * @returns {*}
      * */
-    getDashboard() {
+    getDashboardPage() {
         return dashboardCache;
     }
 
@@ -21,7 +21,7 @@ module.exports = class Cache {
      * Gets the Daemons-Page as JSON-String
      * @returns {*}
      * */
-    getDaemons() {
+    getDaemonsPage() {
         return daemonsCache;
     }
 
@@ -29,7 +29,7 @@ module.exports = class Cache {
      * Gets the Plugins-Page as JSON-String
      * @returns {*}
      * */
-    getPlugins() {
+    getPluginsPage() {
         return pluginsCache;
     }
 
@@ -37,7 +37,7 @@ module.exports = class Cache {
      * Gets the Worlds-Page as JSON-String
      * @returns {*}
      * */
-    getWorlds() {
+    getWorldsPage() {
         return worldsCache;
     }
 
@@ -45,7 +45,7 @@ module.exports = class Cache {
      * Gets the Servertypes-Page as JSON-String
      * @returns {*}
      * */
-    getServertypes() {
+    getServertypesPage() {
         return servertypesCache;
     }
 
@@ -53,7 +53,7 @@ module.exports = class Cache {
      * Gets the Settings-Page as JSON-String
      * @returns {*}
      * */
-    getSettings() {
+    getSettingsPage() {
         return settingsCache;
     }
 

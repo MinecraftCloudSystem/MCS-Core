@@ -17,6 +17,9 @@ app.controller('WorldsCtrl', ['$rootScope', '$scope', 'Socket', function($rootSc
             return;
         }
 
+        $rootScope.sendCallout("warn", "Unexpected error", "An unexpected error occurred getting the Page-Content!");
+        $rootScope.setLoading(false);
+
     });
 
 }]);

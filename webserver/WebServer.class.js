@@ -23,8 +23,6 @@ module.exports = class WebServer {
             return;
         }
 
-        MCS.getCore().getLog().info("Launching Webserver...");
-
         this.app = express();
         this.app.use(compression());
 
@@ -41,7 +39,7 @@ module.exports = class WebServer {
         this.webserver = http.Server(this.app);
         this.webserver.listen(MCS.getCore().getDefaultConfig().getValue("port")['webinterface']);
 
-        MCS.getCore().getLog().info("Webserver launched successfully");
+        MCS.getCore().getLog().info("Webserver started successfully");
 
         callback();
     }

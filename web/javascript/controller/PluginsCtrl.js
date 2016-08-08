@@ -13,9 +13,14 @@ app.controller('PluginsCtrl', ['$rootScope', '$scope', 'Socket', function($rootS
 
         if(data.state == "success") {
             $scope.title = data.content.title;
+            $scope.plugins = data.content.plugins;
+
             $rootScope.setLoading(false);
             return;
         }
+
+        $rootScope.sendCallout("warn", "Unexpected error", "An unexpected error occurred getting the Page-Content!");
+        $rootScope.setLoading(false);
 
     });
 

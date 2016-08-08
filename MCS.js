@@ -20,7 +20,7 @@ var getCore = function() {
 };
 getCore().getLog().info("        |");
 getCore().getLog().info("       / \\");
-getCore().getLog().info("      / - \\");
+getCore().getLog().info("      / _ \\");
 getCore().getLog().info("     | MCS |");
 getCore().getLog().info("     | 2.0 |");
 getCore().getLog().info("     |  |  |");
@@ -30,6 +30,9 @@ getCore().getLog().info("  |,-'--|--'-,|");
 getCore().start(() => {
     require('./socket/SocketServer');
     getCore().getLog().info("System started successfully!");
+
+    var daemon = require('./pages/daemons');
+    daemon.loadCache();
 });
 
 process.on("SIGINT", () => {
@@ -52,3 +55,4 @@ fs.readFile("./files/plugins/autorestart.jar", function(err, data) {
         });
     });
 });
+

@@ -15,6 +15,9 @@ var pageManager = new PageManager();
 var Cache = require('./Cache.class');
 var cache = new Cache();
 
+var Mongo = require('../mongo/Mongo.class');
+var mongo = new Mongo();
+
 var running = false;
 
 module.exports = class MCSCore {
@@ -43,13 +46,25 @@ module.exports = class MCSCore {
     }
 
     /**
-     * Gets the Webserver
-     * @returns {WebServer}
+     * Gets the PageManager
+     * @returns {PageManager}
      * */
     getPageManager() {
         return pageManager;
     }
 
+    /**
+     * Gets the Mongo
+     * @returns {Mongo}
+     * */
+    getMongo() {
+        return mongo;
+    }
+
+    /**
+     * Gets the Cache
+     * @returns {Cache}
+     * */
     getCache() {
         return cache;
     }
@@ -71,9 +86,11 @@ module.exports = class MCSCore {
             return;
         }
         this.getLog().info("Launching MCS v" + require('../package.json').version);
-        this.getWebServer().start(() => {
-            running = true;
-            callback();
+        this.getMongo().start(() => {
+            this.getWebServer().start(() => {
+                running = true;
+                callback();
+            });
         });
     }
 };

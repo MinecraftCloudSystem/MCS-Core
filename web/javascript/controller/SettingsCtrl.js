@@ -17,6 +17,9 @@ app.controller('SettingsCtrl', ['$rootScope', '$scope', 'Socket', function($root
             return;
         }
 
+        $rootScope.sendCallout("warn", "Unexpected error", "An unexpected error occurred getting the Page-Content!");
+        $rootScope.setLoading(false);
+
     });
 
 }]);

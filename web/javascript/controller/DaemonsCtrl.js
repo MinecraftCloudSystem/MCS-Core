@@ -13,9 +13,14 @@ app.controller('DaemonsCtrl', ['$rootScope', '$scope', 'Socket', '$timeout', fun
 
         if(data.state == "success") {
             $scope.title = data.content.title;
+            $scope.daemons = data.content.daemons;
+
             $rootScope.setLoading(false);
             return;
         }
+
+        $rootScope.sendCallout("warn", "Unexpected error", "An unexpected error occurred getting the Page-Content!");
+        $rootScope.setLoading(false);
 
     });
 

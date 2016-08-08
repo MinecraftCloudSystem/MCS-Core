@@ -17,6 +17,9 @@ app.controller('DashboardCtrl', ['$rootScope', '$scope', 'Socket', function($roo
             return;
         }
 
+        $rootScope.sendCallout("warn", "Unexpected error", "An unexpected error occurred getting the Page-Content!");
+        $rootScope.setLoading(false);
+
     });
 
     var playersOnline = [];

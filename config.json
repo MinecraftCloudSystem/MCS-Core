@@ -1,9 +1,9 @@
 {
   "debugMode": true,
   "database": {
-    "hostname": "localhorst",
+    "hostname": "localhost",
     "port": 27017,
-    "databse": "spaceboard",
+    "database": "mcs2",
     "auth":  {
       "enabled": false,
       "username": "username",

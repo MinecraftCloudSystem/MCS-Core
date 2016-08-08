@@ -17,6 +17,9 @@ app.controller('ServertypesCtrl', ['$rootScope', '$scope', 'Socket', function($r
             return;
         }
 
+        $rootScope.sendCallout("warn", "Unexpected error", "An unexpected error occurred getting the Page-Content!");
+        $rootScope.setLoading(false);
+
     });
 
 }]);

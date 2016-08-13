@@ -21,7 +21,7 @@ exports.loadCache = function() {
 
             plugins.forEach((plugin) => {
                 page.plugins.push({
-                    id: plugin.id,
+                    id: plugin._id,
                     name: plugin.name,
                     version: plugin.version,
                     author: plugin.author
@@ -38,7 +38,6 @@ exports.addPlugin = function(name, version, author) {
         var Plugin = MCS.getCore().getMongo().getLibrary().connection.model('plugins');
 
         new Plugin({
-            id: page.plugins[ page.plugins.length - 1 ] + 1,
             name: name,
             version: version,
             author: author

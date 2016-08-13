@@ -13,6 +13,7 @@ app.controller('ServertypesCtrl', ['$rootScope', '$scope', 'Socket', function($r
 
         if(data.state == "success") {
             $scope.title = data.content.title;
+            $scope.servertypes = data.content.servertypes;
             $rootScope.setLoading(false);
             return;
         }

@@ -21,7 +21,7 @@ exports.loadCache = function() {
 
             worlds.forEach((world) => {
                 page.worlds.push({
-                    id: world.id,
+                    id: world._id,
                     name: world.name
                 });
             });
@@ -31,12 +31,11 @@ exports.loadCache = function() {
     }
 };
 
-exports.addServertype = function(name) {
+exports.addWorld = function(name) {
     if(MCS.getCore().getMongo().hasConnection()) {
         var World = MCS.getCore().getMongo().getLibrary().connection.model('worlds');
 
         new World({
-            id: page.worlds[ page.worlds.length - 1 ] + 1,
             name: name
         }).save((err) => {
             if(err) {

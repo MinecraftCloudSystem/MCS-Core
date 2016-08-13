@@ -22,7 +22,7 @@ exports.loadCache = function() {
 
             daemons.forEach((daemon) => {
                 page.daemons.push({
-                    id: daemon.id,
+                    id: daemon._id,
                     name: daemon.name,
                     ip: daemon.ip,
                     port: daemon.port,
@@ -44,18 +44,17 @@ exports.addDaemon = function(name, ip, port) {
         var Daemon = MCS.getCore().getMongo().getLibrary().connection.model('daemons');
 
         new Daemon({
-            id: page.daemons[ page.daemons.length - 1 ] + 1,
             name: name,
             ip: ip,
             port: port,
             apiKey: crypto.randomBytes(16).toString('hex')
         }).save((err) => {
             if(err) {
-                MCS.getCore().getLog().error("Unknown Error saving Daemon 'ilou\'s Daemon' to Database.");
+                MCS.getCore().getLog().error("Unknown Error saving Daemon '" + name + "' to Database.");
                 return;
             }
 
-            MCS.getCore().getLog().info("Daemon 'ilou\'s Daemon' daved to Database successfully.");
+            MCS.getCore().getLog().info("Daemon '" + name + "' daved to Database successfully.");
 
             this.loadCache();
         });

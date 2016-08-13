@@ -49,9 +49,9 @@ fs.readFile("./files/plugins/autorestart.jar", function(err, data) {
         zip.file('plugin.yml').async("string").then(function(data) {
             var info = YAML.parse(data);
 
-            /* getCore().getLog().debug("Name: " + info.name);
+             getCore().getLog().debug("Name: " + info.name);
              getCore().getLog().debug("Version: " + info.version);
-             getCore().getLog().debug("Author: " + (info.author ? info.author : info.authors));*/
+             getCore().getLog().debug("Author: " + (info.author ? info.author : info.authors));
         });
     });
 });

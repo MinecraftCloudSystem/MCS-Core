@@ -13,6 +13,7 @@ app.controller('WorldsCtrl', ['$rootScope', '$scope', 'Socket', function($rootSc
 
         if(data.state == "success") {
             $scope.title = data.content.title;
+            $scope.worlds = data.content.worlds;
             $rootScope.setLoading(false);
             return;
         }

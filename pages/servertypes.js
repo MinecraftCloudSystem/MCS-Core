@@ -21,7 +21,7 @@ exports.loadCache = function() {
 
             servertypes.forEach((servertype) => {
                 page.servertypes.push({
-                    id: servertype.id,
+                    id: servertype._id,
                     name: servertype.name,
                     version: servertype.version,
                     author: servertype.author
@@ -38,7 +38,6 @@ exports.addServertype = function(name, plugins, worlds) {
         var Servertype = MCS.getCore().getMongo().getLibrary().connection.model('servertypes');
 
         new Servertype({
-            id: page.servertypes[ page.servertypes.length - 1 ] + 1,
             name: name,
             plugins: plugins,
             worlds: worlds

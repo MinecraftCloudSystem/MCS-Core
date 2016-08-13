@@ -22,7 +22,7 @@ app.controller('DashboardCtrl', ['$rootScope', '$scope', 'Socket', function($roo
 
     });
 
-    var playersOnline = [];
+    /*var playersOnline = [];
     var last = 1950;
     var max = 2000;
     for (var i = 0; i < 30; i += 1) {
@@ -83,7 +83,7 @@ app.controller('DashboardCtrl', ['$rootScope', '$scope', 'Socket', function($roo
             $("#line-chart-tooltip").hide();
         }
 
-    });
+    });*/
 
     var calcTime = function(time) {
         var minutes = parseInt(60 - time);

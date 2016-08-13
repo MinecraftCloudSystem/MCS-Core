@@ -10,10 +10,11 @@ var connectionURL;
 module.exports = class Mongo {
 
     start(callback) {
-        if(MCS.getCore().getDefaultConfig().getValue("database")['auth']['enabled']) {
-            connectionURL = 'mongodb://' + MCS.getCore().getDefaultConfig().getValue("database")['auth']['username'] + ":" + MCS.getCore().getDefaultConfig().getValue("database")['auth']['password'] + "@" + MCS.getCore().getDefaultConfig().getValue("database")['hostname'] + ":" + MCS.getCore().getDefaultConfig().getValue("database")['port'] + "/" + MCS.getCore().getDefaultConfig().getValue("database")['database'];
+        var database = MCS.getCore().getDefaultConfig().getValue("database");
+        if(database['auth']['enabled']) {
+            connectionURL = 'mongodb://' + database['auth']['username'] + ":" + database['auth']['password'] + "@" + database['hostname'] + ":" + database['port'] + "/" + database['database'];
         } else {
-            connectionURL = 'mongodb://' + MCS.getCore().getDefaultConfig().getValue("database")['hostname'] + ":" + MCS.getCore().getDefaultConfig().getValue("database")['port'] + "/" + MCS.getCore().getDefaultConfig().getValue("database")['database'];
+            connectionURL = 'mongodb://' + database['hostname'] + ":" + database['port'] + "/" + database['database'];
         }
 
         mongoose.connect(connectionURL, {server:{poolSize:4}});

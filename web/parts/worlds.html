@@ -1,14 +1,14 @@
 <div ng-controller="WorldsCtrl">
-    <h3>{{ title }}</h3>
+    <h3>{{ title }}</h3><br/>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <a class="btn btn-block btn-primary" href="/world/add">Add World</a>
         </div>
-        <div class="col-md-6">
-            <a class="btn btn-block btn-danger" href="/world/remove">Remove World</a>
-        </div>
     </div><br/>
-    <div class="row">
+    <div class="callout callout-warning" ng-if="worlds.length == 0">
+        No Worlds have been uploaded yet!
+    </div>
+    <div class="row" ng-if="worlds.length > 0">
         <div class="col-md-3">
             <div class="info-box">
                 <span class="info-box-icon bg-light-blue"><i class="fa fa-globe"></i></span>
@@ -83,11 +83,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <a class="btn btn-block btn-primary" href="/world/add">Add World</a>
-        </div>
-        <div class="col-md-6">
-            <a class="btn btn-block btn-danger" href="/world/remove">Remove World</a>
         </div>
     </div>
 </div>

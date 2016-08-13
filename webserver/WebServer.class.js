@@ -9,6 +9,8 @@ var express = require('express');
 var compression = require('compression');
 var web = require('serve-static')('./web/');
 var data = require('serve-static')('./data/');
+var multiparty = require('connect-multiparty');
+var multipartyMiddleware = multiparty();
 
 var instance;
 
@@ -34,6 +36,16 @@ module.exports = class WebServer {
         this.app.use(web);
         this.app.use(function(req, res) {
             res.status(404).send(fs.readFileSync('./web/index.html', {encoding: "UTF-8"}));
+        });
+
+        this.app.post('/upload/plugins', multipartyMiddleware, function(req, res) {
+
+        });
+        this.app.post('/upload/worlds', multipartyMiddleware, function(req, res) {
+
+        });
+        this.app.post('/upload/spigot', multipartyMiddleware, function(req, res) {
+
         });
 
         this.webserver = http.Server(this.app);

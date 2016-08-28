@@ -25,7 +25,7 @@
                     </th>
                 </tr>
                 <tr ng-repeat="daemon in daemons"  ng-class="{ 'bg-info': daemon.status == 'Pending', 'bg-success': daemon.status == 'Online', 'bg-warning': daemon.status == 'Standby', 'bg-danger': daemon.status == 'Offline' }">
-                    <td>{{ daemon.name }}</td>
+                    <td><a ng-href="/daemons/edit/{{ daemon.id }}">{{ daemon.name }}</a></td>
                     <td>{{ daemon.ip }}:{{ daemon.port }}</td>
                     <td class="btn-group btn-block">
                         <a href="#" class="btn btn-flat" ng-class="{ 'btn-info': daemon.status == 'Pending', 'btn-success': daemon.status == 'Online', 'btn-warning': daemon.status == 'Standby', 'btn-danger': daemon.status == 'Offline' }" ng-if="daemon.status == 'Standby'"><i class="fa fa-play"></i></a>
